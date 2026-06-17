@@ -1,39 +1,184 @@
 body {
   margin: 0;
-  font-family: Arial;
-  background: #0f172a;
+  font-family: Arial, sans-serif;
+  background: #0b1220;
   color: white;
 }
 
-header {
+/* HEADER */
+.topbar {
   text-align: center;
   padding: 30px;
-  background: #1e293b;
+  background: #111827;
 }
 
-.cards {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+.topbar h1 {
+  margin: 0;
+  font-size: 40px;
+}
+
+/* NAVBAR */
+.navbar {
+  display: flex;
+  justify-content: center;
   gap: 20px;
+  background: #1f2937;
+  padding: 15px;
+  flex-wrap: wrap;
+}
+
+.navbar a {
+  color: white;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+.navbar a:hover {
+  color: #38bdf8;
+}
+
+/* HERO */
+.hero {
+  background: url("https://picsum.photos/1200/500") center/cover;
+  height: 350px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.hero-content {
+  background: rgba(0,0,0,0.6);
   padding: 20px;
+  border-radius: 10px;
+  text-align: center;
+}
+
+/* CONTAINER */
+.container {
+  display: flex;
+  gap: 20px;
+  padding: 30px;
+}
+
+/* NEWS GRID */
+.news {
+  flex: 3;
+}
+
+.news h2 {
+  margin-bottom: 15px;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 20px;
 }
 
 .card {
-  background: #1e293b;
+  background: #111827;
   border-radius: 10px;
   overflow: hidden;
+  transition: 0.3s;
+}
+
+.card:hover {
+  transform: scale(1.03);
 }
 
 .card img {
   width: 100%;
+  height: 180px;
+  object-fit: cover;
 }
 
-.card h2, .card p {
+.card h3 {
+  padding: 10px;
+  margin: 0;
+}
+
+.card p {
+  padding: 0 10px 15px;
+  color: #cbd5e1;
+}
+
+/* SIDEBAR */
+.sidebar {
+  flex: 1;
+  background: #111827;
+  padding: 15px;
+  border-radius: 10px;
+  height: fit-content;
+}
+
+.trend {
+  padding: 10px;
+  border-bottom: 1px solid #1f2937;
+}
+
+/* CATEGORIES */
+.categories {
+  padding: 30px;
+}
+
+.cat-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 15px;
+}
+
+.cat {
+  background: #111827;
+  padding: 15px;
+  border-radius: 10px;
+  text-align: center;
+}
+
+/* EXTRA */
+.extra {
+  padding: 30px;
+}
+
+.extra-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 15px;
+}
+
+.extra-card {
+  background: #111827;
+  border-radius: 10px;
+  overflow: hidden;
+}
+
+.extra-card img {
+  width: 100%;
+}
+
+.extra-card h3 {
   padding: 10px;
 }
 
+/* FOOTER */
 footer {
   text-align: center;
-  padding: 15px;
-  background: #1e293b;
+  padding: 20px;
+  background: #111827;
+  margin-top: 20px;
+}
+
+/* RESPONSIVO */
+@media (max-width: 900px) {
+  .container {
+    flex-direction: column;
+  }
+
+  .grid {
+    grid-template-columns: 1fr;
+  }
+
+  .cat-grid,
+  .extra-grid {
+    grid-template-columns: 1fr 1fr;
+  }
 }
